@@ -1,4 +1,7 @@
-
+body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
 .mtabs_wrapper {
     width: 422px;
 }
