@@ -4,20 +4,62 @@
     <meta charset="UTF-8">
     <title>About</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <style>
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: white;
+        }
+        
+        li {
+          float: right;
+        }
+        
+        li a {
+          font-size: 17.5px;
+          font-weight: 500;
+          display: block;
+          color:black;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        li a:hover {
+          background-color:#ff6347;
+        }
+        
+        .logo {
+          float: left;
+        }
+        </style>
+
+  
   </head>
   <body>
+
+
+      <div id="nav-placeholder">
+
+        </div>
+        
+        <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+
+
       <div class="about-container">
-    <div class="about-right">
-      <img src={Map} />
-    </div>
+    
     <div class="about-left">
       <h1>About this Application</h1>
       <p>
-        We’re a group of students many of whom live have lived in PG county and
-We’re a group of students many of whom live have lived in PG county and 
-        We’re a group of students many of whom live have lived in PG county and
-        We’re a group of students many of whom live have lived in PG county and
-        We’re a group of students many of whom live have lived in PG county and
+        We’re a group of students many of whom live have lived in PG county and 
         we’ve heard the residents pain points about needing a fast and reliable
         way to find their assigned and closest polliing placing!
       </p>
@@ -27,6 +69,9 @@ We’re a group of students many of whom live have lived in PG county and
         a head by quickly locating thier polling places, make their election day
         a breeze.
       </p>
+    </div>
+    <div class="about-right">
+      <img src='./assets/map-icon.png' />
     </div>
     </div>
   </body>
