@@ -15,7 +15,7 @@
     display: inline;
 }
 .mtabs li a {
-    border: 1px solid #ccc;
+    border: 1px solid rgb(0, 0, 0);
     padding: 4px 6px;
     text-decoration: none;
     color:#000;
@@ -30,7 +30,7 @@
     -webkit-border-top-right-radius: 5px;
 }
 .mtabs li a:hover {
-    background-color: #dddddd;
+    background-color: #FF6347;
     padding: 4px 6px;
 }
 .mtabs li.active a {
