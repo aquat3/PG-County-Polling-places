@@ -9,10 +9,15 @@
     list-style: none;
     padding: 5px 0 4px 0;
     margin: 0 0 0 0px;
+    background-color:blue;
+    display:flex;
+    justify-content: left;
+    
     /* font: 0.75em arial; */
 }
 .mtabs li {
     display: inline;
+    
 }
 .mtabs li a {
     border: 1px solid rgb(0, 0, 0);
@@ -60,9 +65,11 @@
     border-top: 1px solid #ccc;
     padding: 10px;
     width: 600px;
+    display:flex;
+
 }
 .mtab_content {
-    display: none;
+    display: flex;
 }
 
-/* TAB CSS END */
+/* TAB CSS END CSS for documentation page */
