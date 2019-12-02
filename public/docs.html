@@ -5,10 +5,17 @@
   <meta charset="UTF-8">
   <title>Documentations</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 
 <body>
+  <div id="nav-placeholder"></div>
 
+  <script>
+    $(function() {
+      $("#nav-placeholder").load("nav.html");
+    });
+  </script>
   <script>
     $(document).ready(function () {
       //  When user clicks on tab, this code will be executed
