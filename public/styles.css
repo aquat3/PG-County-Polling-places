@@ -84,7 +84,7 @@ display:inline-block;
   list-style: none;
   padding: 5px 0 4px 0;
   margin: 0 0 0 0px;
-  background-color: blue;
+  background-color: rgba(255, 68, 0, 0.801);
   display: flex;
   justify-content: center;
   padding: 0;
@@ -174,8 +174,8 @@ display:inline-block;
 .content_doc {
   border-style: outset;
   background-color: lightyellow;
-  border-left: 9px solid blue;
-  border-right: 9px solid blue;
+  border-left: 9px solid rgba(255, 68, 0, 0.801);
+  border-right: 9px solid rgba(255, 68, 0, 0.801);
   padding: 20px;
   margin-bottom:40px;
 }
