@@ -79,15 +79,23 @@ body {
 
 
 /*start of CSS for homepage*/
-.img{
-    width: 10%;
-    height: 10%; 
+.container_home {
+    display: flex;
+}
+
+.header_home {
+    width: 100%;
+    margin-left: 100px;
+    margin-top: 45px;
+}
+#image1 {
+    width: 500px;
+    height: 500px;
+    padding: 50px; 
 
 }
 /*end of CSS for homepage*/
-.header_home{
-   
-}
+
 .text{
     font-size: 20px;
 }
