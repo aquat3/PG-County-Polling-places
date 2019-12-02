@@ -10,7 +10,76 @@ body {
 
   /*width: 422px;*/
 }
+/* About */
+.about-container{
 
+  border:0px solid red;
+   display:flex;
+   font-family: 'Poppins', sans-serif;
+
+padding:0px 15px;
+  margin:auto;
+}
+.about-left{
+border:0px solid black;
+width:45%;
+ display:inline-block;
+
+
+}
+.about-left p{
+
+    width:80%;
+}
+.about-left h1{
+
+
+  margin-bottom:80px;
+}
+.about-right{
+display:inline-block;
+
+}
+.about-right img{
+  display:inline-block;
+  border:0px solid green;
+  margin-left:40%;
+
+}
+
+@media screen and (max-width: 800px) {
+
+  .about-container{
+
+    border:0px solid red;
+    display:flex;
+  flex-direction:column;
+    margin:auto;
+    padding:10px;
+  }
+  .about-left{
+    border:0px solid black;
+      width:100%;
+     display:block;
+
+
+
+    }
+.about-left h1{
+  text-align:center;
+}
+    .about-right img{
+      display:block;
+      border:0px solid green;
+       margin:0;
+       width:100%;
+    }
+    .about-right{
+      width:100%;
+      display:block;
+    }
+}
+/* About */ 
 .mtabs {
   list-style: none;
   padding: 5px 0 4px 0;
