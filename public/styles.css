@@ -84,7 +84,7 @@ display:inline-block;
   list-style: none;
   padding: 5px 0 4px 0;
   margin: 0 0 0 0px;
-  background-color: blue;
+  background-color: #ff6347;
   display: flex;
   justify-content: center;
   padding: 0;
@@ -102,8 +102,8 @@ display:inline-block;
   color: #000;
   font-family: Artifika, serif;
   font-family: 'Poppins', sans-serif;
-  background-color: #eeeeee;
   font-size: 14px;
+  font-weight: 400;
   /*border-bottom: 1px solid #ccc;
     outline: none;*/
   border-radius: 5px 5px 5px 5px;
@@ -112,7 +112,7 @@ display:inline-block;
   -webkit-border-top-right-radius: 5px;
 }
 .mtabs li a:hover {
-  background-color: #ff6347;
+
   padding: 4px 6px;
 }
 .mtabs li.active a {
@@ -173,9 +173,9 @@ display:inline-block;
 .content,
 .content_doc {
   border-style: outset;
-  background-color: lightyellow;
-  border-left: 9px solid blue;
-  border-right: 9px solid blue;
+  border: 9px solid #ff6347;
+  background: lightgrey;
+  /* border-right: 9px solid #ff6347; */
   padding: 20px;
   margin-bottom:40px;
 }
