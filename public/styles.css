@@ -72,7 +72,7 @@ body {
 
 }
 .mtab_content {
-    display: flex;
+    display: none;
 }
 
 /* TAB CSS END CSS for documentation page */
