@@ -5,31 +5,39 @@
     <title>Home</title>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-      <div id="nav-placeholder">
+    <div id="nav-placeholder"></div>
 
-        </div>
-        
-        <script>
-        $(function(){
-          $("#nav-placeholder").load("nav.html");
-        });
-        </script>
-    <div className="container">
-      <div className="header">
+    <script>
+      $(function() {
+        $("#nav-placeholder").load("nav.html");
+      });
+    </script>
+    <div class="container_home">
+      <div class="header_home">
         <h1>
           For PG County Residents, <br />
           by PG County Residents
         </h1>
-        <p>
+        <p class="text">
           We will help you find your assigned and <br />
           nearest polling place!
         </p>
+        <div id="search"></div>
+        <script>
+          $(function() {
+            $("#search").load("searchbar.html");
+          });
+        </script>
       </div>
-      <div className="image">
+      <div class="image_home">
         <img
+          id="image1"
           src="https://raw.githubusercontent.com/aquat3/Prince-Georges-County-polling-places/master/src/assets/undraw_voting_nvu7.png"
           alt="Voting"
         />

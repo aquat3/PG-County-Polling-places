@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=>
+<html lang="en-US">
 
 <head>
   <meta charset="UTF-8">
@@ -9,7 +9,33 @@
 
 <body>
 
-  <div class="mtabs_wrapper">
+  <script>
+    $(document).ready(function () {
+      //  When user clicks on tab, this code will be executed
+      $("#mtabs li").click(function () {
+        //  First remove class "active" from currently active tab
+        $("#mtabs li").removeClass('active');
+
+        //  Now add class "active" to the selected/clicked tab
+        $(this).addClass("active");
+
+        //  Hide all tab content
+        $(".mtab_content").hide();
+
+        //  Here we get the href value of the selected tab
+        var selected_tab = $(this).find("a").attr("href");
+
+        //  Show the selected tab content
+        $(selected_tab).fadeIn();
+
+        //  At the end, we add return false so that the click on the link is not executed
+        return false;
+      });
+    });
+
+  </script>
+<div class="container_doc">
+
     <!-- Original tabs START -->
 
     <div class="mtabs">
@@ -19,67 +45,114 @@
         <li><a href="#Why to use" rel="Why to use">Why to use</a></li>
         <!--<li class="active"><a href="#tab4" rel="tab4">Tab 4</a></li>-->
       </ul>
-    </div>
+    </div><br>
 
-    <div class="mtabs_content_container">
-      <div class="Getting Started">
+    <div class="mtabs_flexbox_container">
+      <div class="Getting_Started mtab_content">
         <div class="header">Getting Started</div>
         <div class="content">
-          <p class="text">
+          <p id="Getting Started">
+            Getting started with our polling app. Lorem ipsum dolor sit amet, dico habeo fuisset per at, tamquam theophrastus ei has. Ea mutat vitae
+            interesset est,
+            mea cibo integre voluptaria no. Est audiam vituperatoribus ut, vocent definiebas vel te. Dolore nostro
+            disputationi an sit, in ullum vidisse vel. Has et docendi fastidii invenire, ea alia novum molestiae eam.
+            Eum ut percipit tractatos quaerendum.
+            Mei case rebum primis at, in has modo percipitur. Ea quas autem viderer nam, in mei elit luptatum. Ea hinc
+            mundi corrumpit ius, ea zril vidisse hendrerit vis, mel doming laboramus ex. No alia velit nullam nec, nibh falli
+            haset. Senserit ullamcorper signiferumque sea ea. Eos ne abhorreant consetetur, ius ea dolor solet cetero.
             Lorem ipsum dolor sit amet, dico habeo fuisset per at, tamquam theophrastus ei has. Ea mutat vitae
             interesset est,
             mea cibo integre voluptaria no. Est audiam vituperatoribus ut, vocent definiebas vel te. Dolore nostro
             disputationi an sit, in ullum vidisse vel. Has et docendi fastidii invenire, ea alia novum molestiae eam.
-            Eum ut
-            percipit tractatos quaerendum.
+            Eum ut percipit tractatos quaerendum.
             Mei case rebum primis at, in has modo percipitur. Ea quas autem viderer nam, in mei elit luptatum. Ea hinc
-            mundi
-            corrumpit ius, ea zril vidisse hendrerit vis, mel doming laboramus ex. No alia velit nullam nec, nibh falli
-            has
-            et. Senserit ullamcorper signiferumque sea ea. Eos ne abhorreant consetetur, ius ea dolor solet cetero.
+            mundi corrumpit ius, ea zril vidisse hendrerit vis, mel doming laboramus ex. No alia velit nullam nec, nibh falli
+            haset. Senserit ullamcorper signiferumque sea ea. Eos ne abhorreant consetetur, ius ea dolor solet cetero.
           </p>
         </div>
       </div>
-      <div class="How to use">
-        <div class="header">How to use</div>
-        <div class="content">
-          <p class="text">
+
+      <div class="How_to_use mtab_content2">
+        <div class="header_doc">How to use</div>
+        <div class="content_doc">
+          <p id="How to use">
+            This is how you use the polling app. Lorem ipsum dolor sit amet, dico habeo fuisset per at, tamquam theophrastus ei has. Ea mutat vitae
+            interesset est,
+            mea cibo integre voluptaria no. Est audiam vituperatoribus ut, vocent definiebas vel te. Dolore nostro
+            disputationi an sit, in ullum vidisse vel. Has et docendi fastidii invenire, ea alia novum molestiae eam.
+            Eum ut percipit tractatos quaerendum.
+            Mei case rebum primis at, in has modo percipitur. Ea quas autem viderer nam, in mei elit luptatum. Ea hinc
+            mundi corrumpit ius, ea zril vidisse hendrerit vis, mel doming laboramus ex. No alia velit nullam nec, nibh falli
+            haset. Senserit ullamcorper signiferumque sea ea. Eos ne abhorreant consetetur, ius ea dolor solet cetero.
             Lorem ipsum dolor sit amet, dico habeo fuisset per at, tamquam theophrastus ei has. Ea mutat vitae
             interesset est,
             mea cibo integre voluptaria no. Est audiam vituperatoribus ut, vocent definiebas vel te. Dolore nostro
             disputationi an sit, in ullum vidisse vel. Has et docendi fastidii invenire, ea alia novum molestiae eam.
-            Eum ut
-            percipit tractatos quaerendum.
+            Eum ut percipit tractatos quaerendum.
             Mei case rebum primis at, in has modo percipitur. Ea quas autem viderer nam, in mei elit luptatum. Ea hinc
-            mundi
-            corrumpit ius, ea zril vidisse hendrerit vis, mel doming laboramus ex. No alia velit nullam nec, nibh falli
-            has
-            et. Senserit ullamcorper signiferumque sea ea. Eos ne abhorreant consetetur, ius ea dolor solet cetero.
+            mundi corrumpit ius, ea zril vidisse hendrerit vis, mel doming laboramus ex. No alia velit nullam nec, nibh falli
+            haset. Senserit ullamcorper signiferumque sea ea. Eos ne abhorreant consetetur, ius ea dolor solet cetero.
           </p>
         </div>
       </div>
-      <div class="Why to use">
-        <div class="header">Why to use</div>
-        <div class="content">
-          <p class="text">
+
+      <div class="Why_to_use mtab_content3">
+        <div class="header_doc">Why to use</div>
+        <div class="content_doc">
+          <p id="Why to use">
+            Benefits for using our polling app. Lorem ipsum dolor sit amet, dico habeo fuisset per at, tamquam theophrastus ei has. Ea mutat vitae
+            interesset est,mea cibo integre voluptaria no. Est audiam vituperatoribus ut, vocent definiebas vel te. Dolore nostro
+            disputationi an sit, in ullum vidisse vel. Has et docendi fastidii invenire, ea alia novum molestiae eam.
+            Eum utpercipit tractatos quaerendum.
+            Mei case rebum primis at, in has modo percipitur. Ea quas autem viderer nam, in mei elit luptatum. Ea hinc
+            mundi corrumpit ius, ea zril vidisse hendrerit vis, mel doming laboramus ex. No alia velit nullam nec, nibh falli
+            haset. Senserit ullamcorper signiferumque sea ea. Eos ne abhorreant consetetur, ius ea dolor solet cetero.
             Lorem ipsum dolor sit amet, dico habeo fuisset per at, tamquam theophrastus ei has. Ea mutat vitae
             interesset est,
             mea cibo integre voluptaria no. Est audiam vituperatoribus ut, vocent definiebas vel te. Dolore nostro
             disputationi an sit, in ullum vidisse vel. Has et docendi fastidii invenire, ea alia novum molestiae eam.
-            Eum ut
-            percipit tractatos quaerendum.
+            Eum ut percipit tractatos quaerendum.
             Mei case rebum primis at, in has modo percipitur. Ea quas autem viderer nam, in mei elit luptatum. Ea hinc
-            mundi
-            corrumpit ius, ea zril vidisse hendrerit vis, mel doming laboramus ex. No alia velit nullam nec, nibh falli
-            has
-            et. Senserit ullamcorper signiferumque sea ea. Eos ne abhorreant consetetur, ius ea dolor solet cetero.
+            mundi corrumpit ius, ea zril vidisse hendrerit vis, mel doming laboramus ex. No alia velit nullam nec, nibh falli
+            haset. Senserit ullamcorper signiferumque sea ea. Eos ne abhorreant consetetur, ius ea dolor solet cetero.
           </p>
         </div>
       </div>
+
     </div>
     <!-- Original tabs END -->
   </div>
 
+  <script>
+    $(document).ready(function () {
+      //  When user clicks on tab, this code will be executed
+      $("#mtabs li").click(function () {
+        //  First remove class "active" from currently active tab
+        $("#mtabs li").removeClass('active');
+
+        //  Now add class "active" to the selected/clicked tab
+        $(this).addClass("active");
+
+        //  Hide all tab content
+        $(".mtab_content").hide();
+
+        //  Here we get the href value of the selected tab
+        var selected_tab = $(this).find("a").attr("href");
+
+        //  Show the selected tab content
+        $(selected_tab).fadeIn();
+
+        //  At the end, we add return false so that the click on the link is not executed
+        return false;
+      });
+    });
+
+  </script>
+
+    
+    <!-- Original tabs END -->
+  </div>
+</div>
 </body>
 
 </html>
