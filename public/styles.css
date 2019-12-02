@@ -3,10 +3,9 @@ body {
     padding: 0;
     margin: 0;
   }
+  
   /* TAB CSS END CSS for documentation page */
-.mtabs_wrapper {
-    width: 422px;
-}
+
 .mtabs_container {
     border-bottom: 1px solid #ccc;
 }
@@ -16,7 +15,7 @@ body {
     margin: 0 0 0 0px;
     background-color:blue;
     display:flex;
-    justify-content: left;
+
     
     /* font: 0.75em arial; */
 }
@@ -72,9 +71,15 @@ body {
     width: 600px;
     display:flex;
 
+
 }
 .mtab_content {
-    display: none;
+    display: center;
+}
+
+.container_doc{
+    display:flex;
+    background-color: white;
 }
 
 /* TAB CSS END CSS for documentation page */
