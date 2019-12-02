@@ -47,16 +47,17 @@
 
     <div class="mtabs">
       <ul>
-        <li><a href="#Getting Started" rel="Getting Started">Getting Started</a></li>
-        <li><a href="#How to use" rel="How to use">How to use</a></li>
-        <li><a href="#Why to use" rel="Why to use">Why to use</a></li>
+      
+        <li><a onclick='show( ".Why_to_use",".Getting_Started",".How_to_use" )' href="#Why to use" rel="Why to use">Why to use</a></li>  
+        <li><a onclick='show(".How_to_use",".Getting_Started",".Why_to_use")' href="#How to use" rel="How to use">How to use</a></li>
+        <li><a onclick='show(".Getting_Started",".How_to_use", ".Why_to_use")' href="#Getting Started" rel="Getting Started">Getting Started</a></li>
         <!--<li class="active"><a href="#tab4" rel="tab4">Tab 4</a></li>-->
       </ul>
     </div><br>
 
     <div class="mtabs_flexbox_container">
       <div class="Getting_Started mtab_content">
-        <div class="header">Getting Started</div>
+        <div class="header_doc">Getting Started</div>
         <div class="content">
           <p id="Getting Started">
             Getting started with our polling app. Lorem ipsum dolor sit amet, dico habeo fuisset per at, tamquam theophrastus ei has. Ea mutat vitae
@@ -155,7 +156,18 @@
     });
 
   </script>
+<script>
+document.querySelector('.How_to_use').style.display='none';
+document.querySelector('.Why_to_use').style.display='none';
 
+function show(show,hide1,hide2){
+
+  document.querySelector(show).style.display='block';
+  document.querySelector(hide1).style.display='none';
+  document.querySelector(hide2).style.display='none';
+}
+
+</script>
     
     <!-- Original tabs END -->
   </div>

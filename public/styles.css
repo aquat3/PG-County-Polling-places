@@ -145,10 +145,12 @@ display:inline-block;
 .Getting_Started,
 .How_to_use,
 .Why_to_use {
-  width: auto;
+  width: 50%;
+  
   /*height: auto;*/
-  margin: 10px;
-  /*border: 2px double black;*/
+  margin: auto;
+  line-height:20px;
+   
 }
 
 .mtab_content,
@@ -163,13 +165,18 @@ display:inline-block;
 .header,
 .header_doc {
   text-align: center;
+  font-weight:600;
+  font-size:30px;
+  margin-bottom:20px;
 }
 .content,
 .content_doc {
   border-style: outset;
   background-color: lightyellow;
   border-left: 9px solid blue;
+  border-right: 9px solid blue;
   padding: 20px;
+  margin-bottom:40px;
 }
 /*Documentation page flexbox code [end]*/
 
