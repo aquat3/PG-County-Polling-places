@@ -1,7 +1,7 @@
 body {
     font-family: 'Poppins', sans-serif;
   }
-  
+  /* TAB CSS END CSS for documentation page */
 .mtabs_wrapper {
     width: 422px;
 }
@@ -76,3 +76,18 @@ body {
 }
 
 /* TAB CSS END CSS for documentation page */
+
+
+/*start of CSS for homepage*/
+.img{
+    width: 10%;
+    height: 10%; 
+
+}
+/*end of CSS for homepage*/
+.header_home{
+   
+}
+.text{
+    font-size: 20px;
+}
