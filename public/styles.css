@@ -155,7 +155,7 @@ body {
   }
   
   .search form .inner-form .input-field input::-webkit-input-placeholder {
-    color: #222;
+    color: lightgray;
     font-size: 16px;
   }
   
