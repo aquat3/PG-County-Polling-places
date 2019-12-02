@@ -1,254 +1,245 @@
 body {
-    font-family: 'Poppins', sans-serif;
-    padding: 0;
-    margin: 0;
-  }
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+}
 
-  /* TAB CSS END CSS for documentation page */
+/* TAB CSS END CSS for documentation page */
 .mtabs_wrapper {
-    font-size: 20px;
+  font-size: 20px;
 
-    /*width: 422px;*/
+  /*width: 422px;*/
 }
 
 .mtabs {
-    list-style: none;
-    padding: 5px 0 4px 0;
-    margin: 0 0 0 0px;
-    background-color:blue;
-    display:flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    
+  list-style: none;
+  padding: 5px 0 4px 0;
+  margin: 0 0 0 0px;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
 
-    
-    /* font: 0.75em arial; */
+  /* font: 0.75em arial; */
 }
 .mtabs li {
-    display: inline;
-    
+  display: inline;
 }
 .mtabs li a {
-    border: 1px solid rgb(0, 0, 0);
-    padding: 4px 6px;
-    text-decoration: none;
-    color:#000;
-    font-family: Artifika, serif; 
-    background-color: #eeeeee;
-    font-size:14px;
-    /*border-bottom: 1px solid #ccc;
+  border: 1px solid rgb(0, 0, 0);
+  padding: 4px 6px;
+  text-decoration: none;
+  color: #000;
+  font-family: Artifika, serif;
+  background-color: #eeeeee;
+  font-size: 14px;
+  /*border-bottom: 1px solid #ccc;
     outline: none;*/
-    border-radius: 5px 5px 5px 5px;
-    -moz-border-radius: 5px 5px 5px 5px;
-    -webkit-border-top-left-radius: 5px;
-    -webkit-border-top-right-radius: 5px;
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
 }
 .mtabs li a:hover {
-    background-color: #FF6347;
-    padding: 4px 6px;
+  background-color: #ff6347;
+  padding: 4px 6px;
 }
 .mtabs li.active a {
-    border-bottom: 1px solid #ccc;
-    background-color: #fff;
-    padding: 4px 6px 5px 6px;
-    /*border-bottom: none;*/
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+  padding: 4px 6px 5px 6px;
+  /*border-bottom: none;*/
 }
 .mtabs li.active a:hover {
-    background-color: #eeeeee;
-    padding: 4px 6px 5px 6px;
-    /*border-bottom: none;*/
+  background-color: #eeeeee;
+  padding: 4px 6px 5px 6px;
+  /*border-bottom: none;*/
 }
- 
+
 .mtabs li a.icon_accept {
-    background-image: url(accept.png);
-    background-position: 5px;
-    background-repeat: no-repeat;
-    padding-left: 24px;
+  background-image: url(accept.png);
+  background-position: 5px;
+  background-repeat: no-repeat;
+  padding-left: 24px;
 }
 .mtabs li a.icon_accept:hover {
-    padding-left: 24px;
+  padding-left: 24px;
 }
- 
+
 /*Documentation page flexbox code */
 .mtabs_flexbox_container {
-    display: flex;
-    flex-direction: column;
-
+  display: flex;
+  flex-direction: column;
 }
 
-.Getting_Started, 
-.How_to_use, 
-.Why_to_use{
-    width: auto;
-    /*height: auto;*/
-    margin: 10px;
-    /*border: 2px double black;*/
+.Getting_Started,
+.How_to_use,
+.Why_to_use {
+  width: auto;
+  /*height: auto;*/
+  margin: 10px;
+  /*border: 2px double black;*/
 }
 
 .mtab_content,
 .mtab_content2,
-.mtab_content3{
+.mtab_content3 {
   min-height: 100px;
   /*background-color: lightyellow;*/
   /*font-family: Georgia;*/
   /*font-size: 19px;*/
 }
 
-.header,.header_doc{
-    text-align: center;
+.header,
+.header_doc {
+  text-align: center;
 }
 .content,
-.content_doc{
-    border-style:outset;
-    background-color: lightyellow;
-    border-left: 9px solid blue;
-    padding: 20px;
-    
+.content_doc {
+  border-style: outset;
+  background-color: lightyellow;
+  border-left: 9px solid blue;
+  padding: 20px;
 }
 /*Documentation page flexbox code [end]*/
 
-
 /* TAB CSS END CSS for documentation page */
-
 
 /*start of CSS for homepage*/
 .container_home {
-    display: flex;
+  display: flex;
 }
 
 .header_home {
-    width: 100%;
-    margin-left: 100px;
-    margin-top: 45px;
+  width: 100%;
+  margin-left: 100px;
+  margin-top: 45px;
 }
 #image1 {
-    width: 650px;
-    height: 500px;
-    padding: 50px; 
-
+  width: 650px;
+  height: 500px;
+  padding: 50px;
 }
 /*end of CSS for homepage*/
 
-.text{
-    font-size: 20px;
+.text {
+  font-size: 20px;
 }
 
 /*search bar*/
-  
-  .search form {
-    width: 100%;
-    padding-top: 5vh;
-  }
-  
-  .search form .inner-form {
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    -ms-flex-pack: justify;
-        justify-content: space-between;
-    -ms-flex-align: center;
-        align-items: center;
-    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
-    border-radius: 34px;
-    overflow: hidden;
-    margin-bottom: 30px;
-    border: #3F3D56 solid 2px;
-  }
-  
-  .search form .inner-form .input-field {
-    height: 50px;
-  }
-  
-  .search form .inner-form .input-field input {
-    height: 100%;
-    background: transparent;
-    border: 0;
-    display: block;
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #000;
-  }
-  
-  .search form .inner-form .input-field input.placeholder {
-    color: #222;
-    font-size: 16px;
-  }
-  
-  .search form .inner-form .input-field input:-moz-placeholder {
-    color: #222;
-    font-size: 16px;
-  }
-  
-  .search form .inner-form .input-field input::-webkit-input-placeholder {
-    color: lightgray;
-    font-size: 16px;
-  }
-  
-  .search form .inner-form .input-field input:hover, .s130 form .inner-form .input-field input:focus {
-    box-shadow: none;
-    outline: 0;
-  }
-  
-  .search form .inner-form .input-field.first-wrap {
-    -ms-flex-positive: 1;
-        flex-grow: 1;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-        align-items: center;
-  }
-  
-  
-  .search form .inner-form .input-field.first-wrap svg {
-    width: 36px;
-    height: 36px;
-    fill: #222;
-  }
-  
-  .search form .inner-form .input-field.second-wrap {
-    min-width: 216px;
-  }
-  
-  .search form .inner-form .input-field.second-wrap .btn-search {
-    height: 100%;
-    width: 100%;
-    white-space: nowrap;
-    font-size: 16px;
-    color: #fff;
-    border: 0;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    background: #FF6347;
-    transition: all .2s ease-out, color .2s ease-out;
-    font-weight: 300;
-  }
-  
-  .search form .inner-form .input-field.second-wrap .btn-search:focus {
-    outline: 0;
-    box-shadow: none;
-  }
-  
-  .search form .info {
-    font-size: 15px;
-    color: #ccc;
-    padding-left: 26px;
-  }
-  
-    .search form .inner-form .input-field.first-wrap svg {
-      width: 26px;
-      height: 26px;
-      fill: #222;
-    }
-    .search form .inner-form .input-field.second-wrap {
-      min-width: 100px;
-    }
-    .search form .inner-form .input-field.second-wrap .btn-search {
-      font-size: 20px;
-      color: #3F3D56;
-      font-weight: 800;
-    }
 
-  
+.search form {
+  width: 100%;
+  padding-top: 5vh;
+}
+
+.search form .inner-form {
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 34px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  border: #3f3d56 solid 2px;
+}
+
+.search form .inner-form .input-field {
+  height: 50px;
+}
+
+.search form .inner-form .input-field input {
+  height: 100%;
+  background: transparent;
+  border: 0;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #000;
+}
+
+.search form .inner-form .input-field input.placeholder {
+  color: #222;
+  font-size: 16px;
+}
+
+.search form .inner-form .input-field input:-moz-placeholder {
+  color: #222;
+  font-size: 16px;
+}
+
+.search form .inner-form .input-field input::-webkit-input-placeholder {
+  color: lightgray;
+  font-size: 16px;
+}
+
+.search form .inner-form .input-field input:hover,
+.s130 form .inner-form .input-field input:focus {
+  box-shadow: none;
+  outline: 0;
+}
+
+.search form .inner-form .input-field.first-wrap {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.search form .inner-form .input-field.first-wrap svg {
+  width: 36px;
+  height: 36px;
+  fill: #222;
+}
+
+.search form .inner-form .input-field.second-wrap {
+  min-width: 216px;
+}
+
+.search form .inner-form .input-field.second-wrap .btn-search {
+  height: 100%;
+  width: 100%;
+  white-space: nowrap;
+  font-size: 16px;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  background: #ff6347;
+  transition: all 0.2s ease-out, color 0.2s ease-out;
+  font-weight: 300;
+}
+
+.search form .inner-form .input-field.second-wrap .btn-search:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+.search form .info {
+  font-size: 15px;
+  color: #ccc;
+  padding-left: 26px;
+}
+
+.search form .inner-form .input-field.first-wrap svg {
+  width: 26px;
+  height: 26px;
+  fill: #222;
+}
+.search form .inner-form .input-field.second-wrap {
+  min-width: 100px;
+}
+.search form .inner-form .input-field.second-wrap .btn-search {
+  font-size: 20px;
+  color: #3f3d56;
+  font-weight: 800;
+}
