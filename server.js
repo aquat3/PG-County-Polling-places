@@ -67,7 +67,7 @@ app.get('/about', (req, res) => {
 
   This application uses data provided by PG county to deliver the right experience to the PG county voter. We aim to help PG county voters plan a head by quickly locating thier polling places, make their election day a breeze.`;
 
-  res.render('about.html', about_page);
+  res.render('about.html', {about: about_page});
 })
 
 
