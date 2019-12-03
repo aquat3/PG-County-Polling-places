@@ -7,78 +7,74 @@ body {
 /* TAB CSS END CSS for documentation page */
 .mtabs_wrapper {
   font-size: 20px;
-
   /*width: 422px;*/
 }
+
 /* About */
 .about-container{
-
   border:0px solid red;
-   display:flex;
-   font-family: 'Poppins', sans-serif;
-
-padding:0px 15px;
+  display:flex;
+  font-family: 'Poppins', sans-serif;
+  padding:0px 15px;
   margin:auto;
 }
+
 .about-left{
-border:0px solid black;
-width:45%;
- display:inline-block;
-
-
+  border:0px solid black;
+  width:45%;
+  display:inline-block;
 }
+
 .about-left p{
-
-    width:80%;
+  width:80%;
 }
+
 .about-left h1{
-
-
   margin-bottom:80px;
 }
-.about-right{
-display:inline-block;
 
+.about-right{
+  display:inline-block;
 }
+
 .about-right img{
   display:inline-block;
   border:0px solid green;
   margin-left:40%;
-
 }
 
 @media screen and (max-width: 800px) {
-
   .about-container{
-
     border:0px solid red;
     display:flex;
-  flex-direction:column;
+    flex-direction:column;
     margin:auto;
     padding:10px;
   }
+
   .about-left{
     border:0px solid black;
-      width:100%;
-     display:block;
+    width:100%;
+    display:block;
+  }
 
+  .about-left h1{
+    text-align:center;
+  }
 
+  .about-right img{
+    display:block;
+    border:0px solid green;
+    margin:0;
+    width:100%;
+  }
 
-    }
-.about-left h1{
-  text-align:center;
+  .about-right{
+    width:100%;
+    display:block;
+  }
 }
-    .about-right img{
-      display:block;
-      border:0px solid green;
-       margin:0;
-       width:100%;
-    }
-    .about-right{
-      width:100%;
-      display:block;
-    }
-}
+
 /* About */ 
 .mtabs {
   list-style: none;
@@ -89,12 +85,13 @@ display:inline-block;
   justify-content: center;
   padding: 0;
   margin: 0;
-
   /* font: 0.75em arial; */
 }
+
 .mtabs li {
   display: inline;
 }
+
 .mtabs li a {
   border: 1px solid rgb(0, 0, 0);
   padding: 4px 6px;
@@ -108,19 +105,23 @@ display:inline-block;
     outline: none;*/
   border-radius: 5px 5px 5px 5px;
   -moz-border-radius: 5px 5px 5px 5px;
+  border-top-left-radius: 5px;
   -webkit-border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   -webkit-border-top-right-radius: 5px;
 }
-.mtabs li a:hover {
 
+.mtabs li a:hover {
   padding: 4px 6px;
 }
+
 .mtabs li.active a {
   border-bottom: 1px solid #ccc;
   background-color: #fff;
   padding: 4px 6px 5px 6px;
   /*border-bottom: none;*/
 }
+
 .mtabs li.active a:hover {
   background-color: #eeeeee;
   padding: 4px 6px 5px 6px;
@@ -133,6 +134,7 @@ display:inline-block;
   background-repeat: no-repeat;
   padding-left: 24px;
 }
+
 .mtabs li a.icon_accept:hover {
   padding-left: 24px;
 }
@@ -151,7 +153,6 @@ display:inline-block;
   /*height: auto;*/
   margin: auto;
   line-height:20px;
-   
 }
 
 .mtab_content,
@@ -170,6 +171,7 @@ display:inline-block;
   font-size:30px;
   margin-bottom:20px;
 }
+
 .content,
 .content_doc {
   border-style: outset;
@@ -193,6 +195,7 @@ display:inline-block;
   margin-left: 100px;
   margin-top: 45px;
 }
+
 #image1 {
   width: 650px;
   height: 500px;
@@ -205,7 +208,6 @@ display:inline-block;
 }
 
 /*search bar*/
-
 .search form {
   width: 100%;
   padding-top: 5vh;
@@ -323,15 +325,15 @@ display:inline-block;
 
 
 .map-container {
-    position: sticky;
-    right: 0;
-    top: 0;
-    float: right;
-    height: 100%;
-    overflow: scroll;
+  position: sticky;
+  right: 0;
+  top: 0;
+  float: right;
+  height: 100%;
+  overflow: scroll;
 }
 
 #map {
-    height: 100vh;
+  height: 100vh;
 }
 
