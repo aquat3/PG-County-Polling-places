@@ -3,7 +3,7 @@ const express = require('express');
 const fetch = require('node-fetch');
 const bodyParser = require('body-parser')
 const googleMapsClient = require('@google/maps').createClient({
-  key: 'AIzaSyAi8_G0qcijemU6clSZAML_9lvUQSnz-q4'
+  key: process.env.API_KEY
 });
 
 const app = express();
@@ -17,10 +17,10 @@ app.use(express.static('views'));
 
 
 const con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "polling_data"
+  host: process.env.DB_HOST,
+  user: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_SCHEMA
 });
 
 
