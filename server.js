@@ -49,8 +49,8 @@ app.post('/form_search', function(req, res) {
       
       con.query(q, function (err, result, fields) {
           if (err) throw err;
-
-          return res.render('results.html',result);
+          console.log(result);
+          return res.render('results.html', result);
             // for (const row in result) {
             //   console.log(result[row].ADDRESS);
             // }
