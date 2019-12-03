@@ -18,42 +18,33 @@
       });
     </script>
   
-  <div class="container">
-
-    <div class="row">
-      <div class="col-md-12">
-                <div id="search"></div>
-
-        <script>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="search"></div>
+          <script>
             $(function() {
               $("#search").load("searchbar.html");
             });
           </script>
+        </div>
       </div>
+      <div class="map-container col-md-6">
+        <div id="map"></div>
+      </div>
+
+      <div class="reslts col-md-6"></div>
     </div>
-    <div class="map-container col-md-6">
-      <div id="map"></div>
-    </div>
 
-    <div class="reslts col-md-6">
-      
-
-    </div>
-  </div>
-            
-
-<script type="text/javascript">
-
+    <script type="text/javascript">
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
           zoom: 8
         });
-      }  
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi8_G0qcijemU6clSZAML_9lvUQSnz-q4&libraries=places&callback=initMap" async defer></script>
-
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi8_G0qcijemU6clSZAML_9lvUQSnz-q4&libraries=places&callback=initMap" async defer></script>
   </body>
 </html>
