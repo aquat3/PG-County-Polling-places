@@ -7,7 +7,7 @@ const googleMapsClient = require('@google/maps').createClient({
 });
 
 const app = express();
-const port = env.PORT;
+const port = process.env.PORT;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
