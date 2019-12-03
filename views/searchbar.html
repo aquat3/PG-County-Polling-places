@@ -1,0 +1,31 @@
+<div class="search">
+    <form method="post" action="/form_search">
+      <div class="inner-form">
+        <div class="input-field first-wrap">
+          <div class="svg-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            </svg>
+          </div>
+
+            <input name="address" id="address_input" type="text" placeholder="Enter your address here " />
+        <div class="input-field second-wrap">
+            <button id="form_btn" class="btn-search" type="submit">Search!</button>
+        </div>
+
+
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script type="text/javascript">
+
+    function initMap() {
+        var input = document.getElementById('address_input');
+        var autocomplete = new google.maps.places.Autocomplete(input);
+        autocomplete.setFields(['address_component']);
+      }
+
+  </script>
+
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi8_G0qcijemU6clSZAML_9lvUQSnz-q4&libraries=places&callback=initMap" async defer></script>

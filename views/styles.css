@@ -320,3 +320,18 @@ display:inline-block;
   color: #3f3d56;
   font-weight: 800;
 }
+
+
+.map-container {
+    position: sticky;
+    right: 0;
+    top: 0;
+    float: right;
+    height: 100%;
+    overflow: scroll;
+}
+
+#map {
+    height: 100vh;
+}
+

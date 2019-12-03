@@ -1,5 +1,10 @@
+const mysql = require('mysql');
 const express = require('express');
 const fetch = require('node-fetch');
+const bodyParser = require('body-parser')
+const googleMapsClient = require('@google/maps').createClient({
+  key: 'AIzaSyAi8_G0qcijemU6clSZAML_9lvUQSnz-q4'
+});
 
 const app = express();
 const port = 3000;
@@ -7,60 +12,53 @@ const port = 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-/*
- * The 'express.static' middleware provides some services Express can use to
- * serve files from a directory - in this case, the 'public' subdirectory of
- * this project.
- *
- * The 'app.use' function attaches middleware to our Express application, so
- * that when the application is running, it can serve static files. In this
- * case, we mount it over the entire app: any web request that GETs a path that
- * exists in the 'public' directory will be handled by the middleware. The
- * middleware also serves the 'index.html' file in a directory (if it exists)
- * whenever a client requests the directory itself.
- *
- * The 'public' directory for this project, in turn, contains all the HTML,
- * Javascript, and CSS files needed to run a simple chat client connected to
- * this server. Accessing this server's root URL will serve 'public/index.html',
- * which contains our chat client. This gives users an easy way to connect to
- * the server and interact with other users.
- *
- * See also:
- *  - Express: Serving static files in Express
- *    https://expressjs.com/en/starter/static-files.html
- *  - Express: express.static()
- *    https://expressjs.com/en/4x/api.html#express.static
- *  - Express: Using middleware
- *    https://expressjs.com/en/guide/using-middleware.html
- *  - Express: app.use()
- *    https://expressjs.com/en/4x/api.html#app.use
- */
-app.use(express.static('public'));
+app.engine('html', require('ejs').renderFile);
+app.use(express.static('views'));
 
-// this is a single route, in the simplest possible format
-// the simplest format is not necessarily the best one.
-// this is, right now, an introduction to Callback Hell
-// but it is okay for a first-level example
-app.get('/api', (req, res) => {
-  const baseURL = 'https://api.umd.io/v0/courses/list';
-  fetch(baseURL)
-    .then((r) => r.json())
-    .then((data) => {
-      let arr = []
-      data.map(b => {
-        if(b.course_id.includes("INST")) {
-          let ret = b.course_id + ": " + b.name;
-          arr.push(ret);
-        }
-      });
-      console.log(arr);
-      return arr;
-    })
-    .then((arr) => res.send({data: arr}))
-    .catch((err) => {
-      console.log(err);
-      res.redirect('/error');
+
+const con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "polling_data"
+});
+
+
+
+
+app.post('/form_search', function(req, res) {
+  console.log(req.body['address']);
+  // var lat;
+  // var lng;
+
+  var radius = 1;
+
+    googleMapsClient.geocode({
+      address: req.body['address']
+    }, function(err, response) {
+      if (!err) {
+
+        var lat = response.json.results[0].geometry.location.lat;
+        var lng = response.json.results[0].geometry.location.lng;
+
+        var q = `SELECT *, ( 3959 * acos( cos( radians('${lat}') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('${lng}') ) + sin( radians('${lat}') ) * sin( radians( lat ) ) ) ) AS distance FROM pollingplaces HAVING distance < '${radius}' ORDER BY distance`;
+        
+        con.query(q, function (err, result, fields) {
+            if (err) throw err;
+
+            return res.render('results.html',result);
+              // for (const row in result) {
+              //   console.log(result[row].ADDRESS);
+              // }
+
+          });
+
+      }
+
     });
 });
 
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
+

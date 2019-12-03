@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+      <div id="nav-placeholder">
+
+        </div>
+        
+        <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+
+  </head>
+  <body>
+  
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+                <div id="search"></div>
+
+        <script>
+            $(function() {
+              $("#search").load("searchbar.html");
+            });
+          </script>
+      </div>
+    </div>
+    <div class="map-container col-md-6">
+      <div id="map"></div>
+    </div>
+
+    <div class="reslts col-md-6">
+      
+
+    </div>
+  </div>
+            
+
+<script type="text/javascript">
+
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }  
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi8_G0qcijemU6clSZAML_9lvUQSnz-q4&libraries=places&callback=initMap" async defer></script>
+
+  </body>
+</html>
