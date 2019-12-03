@@ -69,6 +69,10 @@ app.get('/about', (req, res) => {
   res.render('about.html', {about_1: about_page_para_1, about_2: about_page_para_2});
 })
 
+app.get('/doc', (req, res) => {
+  res.render('docs.html');
+})
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
