@@ -33,30 +33,42 @@ app.post('/form_search', function(req, res) {
 
   var radius = 1;
 
-    googleMapsClient.geocode({
-      address: req.body['address']
-    }, function(err, response) {
-      if (!err) {
+  googleMapsClient.geocode({
+    address: req.body['address']
+  }, function(err, response) {
+    if (!err) {
 
-        var lat = response.json.results[0].geometry.location.lat;
-        var lng = response.json.results[0].geometry.location.lng;
+      var lat = response.json.results[0].geometry.location.lat;
+      var lng = response.json.results[0].geometry.location.lng;
 
-        var q = `SELECT *, ( 3959 * acos( cos( radians('${lat}') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('${lng}') ) + sin( radians('${lat}') ) * sin( radians( lat ) ) ) ) AS distance FROM pollingplaces HAVING distance < '${radius}' ORDER BY distance`;
-        
-        con.query(q, function (err, result, fields) {
-            if (err) throw err;
+      console.log(lat);
+      console.log(lng);
+      
+      // haversine formula
+      var q = `SELECT *, ( 3959 * acos( cos( radians('${lat}') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('${lng}') ) + sin( radians('${lat}') ) * sin( radians( lat ) ) ) ) AS distance FROM pollingplaces HAVING distance < '${radius}' ORDER BY distance`;
+      
+      con.query(q, function (err, result, fields) {
+          if (err) throw err;
 
-            return res.render('results.html',result);
-              // for (const row in result) {
-              //   console.log(result[row].ADDRESS);
-              // }
+          return res.render('results.html',result);
+            // for (const row in result) {
+            //   console.log(result[row].ADDRESS);
+            // }
 
-          });
+        });
 
-      }
+    }
 
-    });
+  });
 });
+
+app.get('/about', (req, res) => {
+  const about_page = `We’re a group of students many of whom live have lived in PG county and we’ve heard the residents pain points about needing a fast and reliable way to find their assigned and closest polliing placing!
+
+  This application uses data provided by PG county to deliver the right experience to the PG county voter. We aim to help PG county voters plan a head by quickly locating thier polling places, make their election day a breeze.`;
+
+  res.render('about.html', about_page);
+})
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
