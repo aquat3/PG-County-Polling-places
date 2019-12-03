@@ -1,5 +1,5 @@
 {
-  "name": "polling places",
+  "name": "polling_places",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
