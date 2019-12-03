@@ -19,7 +19,7 @@ app.use(express.static('views'));
 const con = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "ma0811504HER",
+  password: "",
   database: "polling_data"
 });
 
