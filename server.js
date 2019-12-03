@@ -6,8 +6,12 @@ const googleMapsClient = require('@google/maps').createClient({
   key: process.env.API_KEY
 });
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 const app = express();
 const port = process.env.PORT;
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
