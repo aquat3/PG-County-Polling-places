@@ -5,9 +5,10 @@
     <title>Results</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="styles.css" />
+
   </head>
   <body>
     <div id="nav-placeholder"></div>
@@ -33,7 +34,20 @@
         <div id="map"></div>
       </div>
 
-      <div class="reslts col-md-6"></div>
+      <div class="reslts col-md-6">
+
+        <% for(var i = 0; i < res.length; i++) { %>
+          <div class="card w-75">
+            <div class="card-body">
+              <h6 class="card-title"><%= res[i].NAME %></h6>
+              <h3 class="card-text float-right"><%= (res[i].distance).toFixed(1) %> mi</h3>
+              <p class="card-text card-txt-add"><%= res[i].ADDRESS%>, <%= res[i].CITY %></p>
+            </div>
+          </div>
+        <% } %>
+
+      </div>
+
     </div>
 
     <script type="text/javascript">

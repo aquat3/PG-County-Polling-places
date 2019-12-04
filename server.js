@@ -32,9 +32,6 @@ const con = mysql.createConnection({
 
 app.post('/form_search', function(req, res) {
   console.log(req.body['address']);
-  // var lat;
-  // var lng;
-
   var radius = 1;
 
   googleMapsClient.geocode({
@@ -53,11 +50,8 @@ app.post('/form_search', function(req, res) {
       
       con.query(q, function (err, result, fields) {
           if (err) throw err;
-          console.log(result);
-          return res.render('results.html', result);
-            // for (const row in result) {
-            //   console.log(result[row].ADDRESS);
-            // }
+          console.log(result[0]);
+          res.render('results.html', {res: result});
 
         });
 

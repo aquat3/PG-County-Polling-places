@@ -337,3 +337,24 @@ body {
   height: 100vh;
 }
 
+.w-75 {
+    width: 100% !important;
+    margin-bottom: 3%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 3%;
+    padding-right: 3%;
+    border-radius: 0.75em;
+    border-color: transparent;
+    box-shadow: 0px 2px 7px rgba(0,0,0,0.1);
+}
+
+.card-txt-add {
+  width: 70%;
+}
+
+
+
+
+
+
