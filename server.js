@@ -71,6 +71,11 @@ app.get('/doc', (req, res) => {
   res.render('docs.html');
 });
 
+app.put('/put', (req, res) => {
+  console.log("This is a put endpoint");
+  res.redirect('/404');
+})
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
