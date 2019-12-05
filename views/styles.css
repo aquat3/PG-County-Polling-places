@@ -175,7 +175,7 @@ body {
 .content,
 .content_doc {
   border-style: outset;
-  background-color: lightyellow;
+  background-color:rgb(228, 224, 224);
   border-left: 9px solid rgba(255, 68, 0, 0.801);
   border-right: 9px solid rgba(255, 68, 0, 0.801);
   padding: 20px;
