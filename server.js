@@ -2,12 +2,14 @@ const mysql = require('mysql');
 const express = require('express');
 const fetch = require('node-fetch');
 const bodyParser = require('body-parser')
+
+const dotenv = require('dotenv');
+dotenv.config();
+
 const googleMapsClient = require('@google/maps').createClient({
   key: process.env.API_KEY
 });
 
-const dotenv = require('dotenv');
-dotenv.config();
 
 const app = express();
 const port = process.env.PORT;
@@ -28,30 +30,24 @@ const con = mysql.createConnection({
 });
 
 
-
-
 app.post('/form_search', function(req, res) {
-  console.log(req.body['address']);
   var radius = 1;
-
+  var input_address = req.body['address'];
   googleMapsClient.geocode({
-    address: req.body['address']
+    address: input_address
   }, function(err, response) {
     if (!err) {
 
       var lat = response.json.results[0].geometry.location.lat;
       var lng = response.json.results[0].geometry.location.lng;
 
-      console.log(lat);
-      console.log(lng);
-      
       // haversine formula
-      var q = `SELECT *, ( 3959 * acos( cos( radians('${lat}') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('${lng}') ) + sin( radians('${lat}') ) * sin( radians( lat ) ) ) ) AS distance FROM pollingplaces HAVING distance < '${radius}' ORDER BY distance`;
+      var q = `SELECT *, ( 3959 * acos( cos( radians('${lat}') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('${lng}') ) + sin( radians('${lat}') ) * sin( radians( lat ) ) ) ) AS distance FROM pollingplaces GROUP BY distance HAVING distance < '${radius}' ORDER BY distance`;
       
       con.query(q, function (err, result, fields) {
           if (err) throw err;
-          console.log(result[0]);
-          res.render('results.html', {res: result});
+          console.log(result);
+          res.render('results.html', {res: result, loc: input_address, lat: lat, lng: lng});
 
         });
 
