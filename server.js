@@ -46,7 +46,6 @@ app.post('/form_search', function(req, res) {
       
       con.query(q, function (err, result, fields) {
           if (err) throw err;
-          console.log(result);
           res.render('results.html', {res: result, loc: input_address, lat: lat, lng: lng});
 
         });

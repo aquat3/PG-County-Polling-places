@@ -37,7 +37,7 @@
       <div class="reslts col-md-6">
 
       <% if (res != '') { %>
-          <p class="vote_p">Here’s where you can vote near <span class="near"><%= loc %></span>!</p>
+          <p class="vote_p">Here’s where you can vote within 1 mile from <span class="near"><%= loc %></span>!</p>
             <% for(var i = 0; i < res.length; i++) { %>
             <div class="card w-75">
               <div class="card-body">
@@ -69,7 +69,7 @@
 
         var latlng = new google.maps.LatLng(lat,lng);
         var bounds = new google.maps.LatLngBounds();
-        createMarker(latlng, '');
+        createMarker(latlng, '', 1);
         bounds.extend(latlng);
         map.fitBounds(bounds);
 
@@ -79,7 +79,7 @@
             lat = res[i].lat;
             lng = res[i].lng;
             latlng = new google.maps.LatLng(lat,lng);
-            createMarker(latlng, '');
+            createMarker(latlng, '', 0);
             bounds.extend(latlng);
             map.fitBounds(bounds);
           }
@@ -87,18 +87,26 @@
       }
 
 
-      function createMarker(latlng, content) {
+      function createMarker(latlng, content, cur_loc) {
         var infowindow = new google.maps.InfoWindow({
             content: content
         });
 
-        var marker = new google.maps.Marker({
+        if (cur_loc === 1) {
+          var marker = new google.maps.Marker({
             map: map,
             position: latlng,
             icon: {
               url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
             }
-        });
+          });
+        } else {
+          var marker = new google.maps.Marker({
+            map: map,
+            position: latlng
+          });
+        }
+        
 
         marker.addListener('click', function () {
             infowindow.open(map, marker);
