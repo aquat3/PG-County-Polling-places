@@ -69,7 +69,7 @@ app.get('/about', (req, res) => {
 
 app.get('/doc', (req, res) => {
   res.render('docs.html');
-})
+});
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
