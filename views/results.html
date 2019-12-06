@@ -36,28 +36,83 @@
 
       <div class="reslts col-md-6">
 
-        <% for(var i = 0; i < res.length; i++) { %>
-          <div class="card w-75">
-            <div class="card-body">
-              <h6 class="card-title"><%= res[i].NAME %></h6>
-              <h3 class="card-text float-right"><%= (res[i].distance).toFixed(1) %> mi</h3>
-              <p class="card-text card-txt-add"><%= res[i].ADDRESS%>, <%= res[i].CITY %></p>
+      <% if (res != '') { %>
+          <p class="vote_p">Here’s where you can vote within 1 mile from <span class="near"><%= loc %></span>!</p>
+            <% for(var i = 0; i < res.length; i++) { %>
+            <div class="card w-75">
+              <div class="card-body">
+                <h6 class="card-title"><%= res[i].NAME %></h6>
+                <h3 class="card-text float-right"><%= (res[i].distance).toFixed(1) %> mi</h3>
+                <p class="card-text card-txt-add"><%= res[i].ADDRESS%>, <%= res[i].CITY %></p>
+              </div>
             </div>
-          </div>
+          <% } %>
+        <% } else { %>
+            <p class="vote_p">We couldn't find any polling locations near <span class="near"><%= loc %>!</span></p>
         <% } %>
+        
 
       </div>
 
     </div>
 
     <script type="text/javascript">
+
       var map;
       function initMap() {
+        var lat = <%= lat %>;
+        var lng = <%= lng %>;
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
+          center: {lat: lat, lng: lng},
+          zoom: 12
+        });
+
+        var latlng = new google.maps.LatLng(lat,lng);
+        var bounds = new google.maps.LatLngBounds();
+        createMarker(latlng, '', 1);
+        bounds.extend(latlng);
+        map.fitBounds(bounds);
+
+        var res = (<%- JSON.stringify(res) %>);
+        if(res) {
+          for (var i = 0; i < res.length; i++) {
+            lat = res[i].lat;
+            lng = res[i].lng;
+            latlng = new google.maps.LatLng(lat,lng);
+            createMarker(latlng, '', 0);
+            bounds.extend(latlng);
+            map.fitBounds(bounds);
+          }
+        }
+      }
+
+
+      function createMarker(latlng, content, cur_loc) {
+        var infowindow = new google.maps.InfoWindow({
+            content: content
+        });
+
+        if (cur_loc === 1) {
+          var marker = new google.maps.Marker({
+            map: map,
+            position: latlng,
+            icon: {
+              url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+            }
+          });
+        } else {
+          var marker = new google.maps.Marker({
+            map: map,
+            position: latlng
+          });
+        }
+        
+
+        marker.addListener('click', function () {
+            infowindow.open(map, marker);
         });
       }
+
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi8_G0qcijemU6clSZAML_9lvUQSnz-q4&libraries=places&callback=initMap" async defer></script>
   </body>
