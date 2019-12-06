@@ -42,7 +42,7 @@ app.post('/form_search', function(req, res) {
       var lng = response.json.results[0].geometry.location.lng;
 
       // haversine formula
-      var q = `SELECT *, ( 3959 * acos( cos( radians('${lat}') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('${lng}') ) + sin( radians('${lat}') ) * sin( radians( lat ) ) ) ) AS distance FROM pollingplaces GROUP BY distance HAVING distance < '${radius}' ORDER BY distance`;
+      var q = `SELECT *, ( 3959 * acos( cos( radians('${lat}') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('${lng}') ) + sin( radians('${lat}') ) * sin( radians( lat ) ) ) ) AS distance FROM pollingplaces HAVING distance < '${radius}' ORDER BY distance`;
       
       con.query(q, function (err, result, fields) {
           if (err) throw err;
@@ -56,7 +56,7 @@ app.post('/form_search', function(req, res) {
 });
 
 app.get('/about', (req, res) => {
-  const about_page_para_1 = "We’re a group of students many of whom live have lived in PG county and we’ve heard the residents pain points about needing a fast and reliable way to find their assigned and closest polliing placing!";
+  const about_page_para_1 = "We’re a group of students many of whom live have lived in PG county and we’ve heard the residents pain points about needing a fast and reliable way to find their assigned and closest polling placing!";
   const about_page_para_2 = "This application uses data provided by PG county to deliver the right experience to the PG county voter. We aim to help PG county voters plan a head by quickly locating thier polling places, make their election day a breeze.";
 
   res.render('about.html', {about_1: about_page_para_1, about_2: about_page_para_2});
