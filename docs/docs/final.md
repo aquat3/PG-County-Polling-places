@@ -45,7 +45,7 @@ For the back-end we used the following:
 
 We use Node for the backend to create the endpoints. And used MySQL to store the data from the dataset and query it fast and easily. 
 
-And finally we used Google MAps Platform to provide the map, geocoding, and markers. Also Github and Heroku to host the application. 
+And finally we used Google Maps Platform to provide the map, geocoding, and markers. Also Github and Heroku to host the application. 
 
 ## Solution to the Problem
 
