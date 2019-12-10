@@ -8,7 +8,7 @@ You can check our online webpage on Heroku [here](https://murmuring-beach-84961.
 
 You can check our user manual [here](https://murmuring-beach-84961.herokuapp.com/docs/user.md)
 
-You can check our developer manual below
+You can check our developer manual [below](#developer-manual)
 
 
 ## Developer Manual
