@@ -21,10 +21,10 @@ You can check our developer manual below
 	- To start the server, run `npm start` and navigate to `localhost:3000` to see the app in the browser
 
 - Endpoints:
-	- `/form_search` This endpoint takes a geocoded address (geocoded by the Google Maps Platform’s geocoding API) and returns a list of nearby polling places that are within a 1-mile radius from the request address.
+	- `POST` `/form_search`, This endpoint takes a geocoded address (geocoded by the Google Maps Platform’s geocoding API) and returns a list of nearby polling places that are within a 1-mile radius from the request address.
 
-	- `/about` Returns text information about the application
+	- `GET` `/about` Returns text information about the application
 
-	- `/doc` Returns the documentation page
+	- `GET` `/doc` Returns the documentation page
 
-	- `/put` Doesn’t do anything. Returns a non-existant 404 error page
+	- `PUT` `/put` Doesn’t do anything. Returns a non-existant 404 error page
